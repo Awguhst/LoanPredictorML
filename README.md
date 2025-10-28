@@ -81,23 +81,12 @@ This will launch the Streamlit app in your browser.
 
 ### Tabs Overview
 
-#### 1. **Upload CSV**
+#### **Upload CSV**
 - Upload a CSV file containing loan application data.
 - The app will predict the **Risk Score** (regression model) and **Loan Approval** (classification model) for each entry.
 - You can filter the predictions by risk score and approval status, then save the filtered data to the SQLite database.
 
-#### 2. **SQLite Database**
+#### **SQLite Database**
 - Filter and query loan records stored in the SQLite database.
 - Filter by loan amount, approval status, risk score range, employment status, and loan purpose.
 - Clear all records from the database if needed.
-
-### Data Filtering and Saving
-
-- Set a **Risk Threshold** using a slider to filter loan applications by risk score.
-- Choose the approval status (**approved**, **rejected**, or **both**) for filtering.
-- After filtering, click the **Save Data to Database** button to store the filtered results in the SQLite database.
-
-### Database
-
-- **SQLite Database:** The app uses an SQLite database (`loan_data.db`) to store loan application data.
-- Users can filter and query records stored in the database using SQLAlchemy, which simplifies interaction with the database.
