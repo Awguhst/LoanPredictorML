@@ -4,8 +4,6 @@
 
 The **Loan Management App** is a proof of concept that uses machine learning models to assess loan applications. By predicting the **risk score** and **approval status** of loan applicants, this app provides a quick and effective way to manage loan data. It allows users to upload loan data, view predictions, and store the results in an SQLite database for further analysis.
 
-This app is built using **XGBoost** and **Optuna** for hyperparameter optimization, providing powerful predictive capabilities for loan risk and approval prediction.
-
 ---
 
 ## 🎥 Demo
@@ -39,9 +37,9 @@ The **Loan Risk Prediction** model is a **regression model** trained to predict 
 
 - **Model Type:** XGBoost Regressor
 - **Evaluation Metric:**
-  - **R² Score:** 0.769
-  - **Mean Absolute Error (MAE):** 2.801
-  - **Root Mean Squared Error (RMSE):** 3.784
+  - **R² Score:** 0.77
+  - **Mean Absolute Error (MAE):** 2.8
+  - **Root Mean Squared Error (RMSE):** 3.78
 
 ### **Loan Approval Prediction (Classification Model)**
 The **Loan Approval Prediction** model is a **binary classification model** trained to predict whether a loan will be **approved (1)** or **rejected (0)** based on an applicant's data.
@@ -55,7 +53,7 @@ The **Loan Approval Prediction** model is a **binary classification model** trai
 Both models were trained on synthetic data derived from the [Financial Risk for Loan Approval dataset on Kaggle](https://www.kaggle.com/datasets/lorenzozoppelletto/financial-risk-for-loan-approval).
 
 ### Hyperparameter Tuning with Optuna
-Both models underwent hyperparameter optimization using **Optuna**, an automatic hyperparameter optimization framework. Optuna helps to fine-tune model parameters and improve performance through an efficient search process, ensuring that the models achieve optimal results in terms of predictive accuracy and risk assessment.
+Both models underwent hyperparameter optimization using **Optuna**, an automatic hyperparameter optimization framework. Optuna helps to fine-tune model parameters and improve performance through an efficient search process, ensuring that the models achieve optimal results in terms of accuracy.
 
 ---
 
