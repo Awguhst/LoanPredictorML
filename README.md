@@ -7,7 +7,7 @@ The **Loan Management App** is a proof of concept that uses machine learning mod
 ---
 
 ## 🎥 Demo
-![Streamlit app GIF](media/demo.gif)
+![Streamlit app GIF](media/dem.gif)
 
 ---
 
