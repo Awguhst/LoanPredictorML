@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 st.markdown("""
     <style>
         .stButton > button {
-            background-color: #99aab5;
+            background-color: #a8a8a8;
             color: white;
             border-radius: 10px;
             padding: 10px 20px;
@@ -125,7 +125,7 @@ if tabs == "Upload CSV":
         if all(col in df.columns for col in required_columns):
             # Display the CSV preview
             st.subheader("CSV Preview")
-            st.dataframe(df)  # Show the dataframe as a table
+            st.dataframe(df)  
 
             # Predict risk score and loan approval
             st.markdown("**Predicting Loan Risk and Approval...**")
@@ -156,11 +156,6 @@ elif tabs == "SQlite Database":
     # Initialize filters
     filter_conditions = []
 
-    # Filter by Loan Amount
-    min_loan_amount = st.sidebar.number_input("Minimum Loan Amount", min_value=0, value=0)
-    max_loan_amount = st.sidebar.number_input("Maximum Loan Amount", min_value=0, value=1000000)
-    filter_conditions.append(f"LoanAmount BETWEEN {min_loan_amount} AND {max_loan_amount}")
-
     # Filter by Approval Status 
     approval_status = st.sidebar.selectbox("Approval Status", options=["Both", "Approved", "Rejected"])
     if approval_status != "Both":
@@ -172,17 +167,25 @@ elif tabs == "SQlite Database":
     max_risk_score = st.sidebar.slider("Maximum Risk Score", 0.0, 100.0, 100.0)
     filter_conditions.append(f"PredictedRiskScore BETWEEN {min_risk_score} AND {max_risk_score}")
 
-    # Filter by Employment Status
-    employment_status = st.sidebar.selectbox("Employment Status", options=["Both", "Employed", "Self-Employed", "Unemployed"])
-    if employment_status != "Both":
-        filter_conditions.append(f"EmploymentStatus = '{employment_status}'")
+    # Create two columns in the sidebar
+    col1, col2 = st.columns(2)
 
-    # Filter by Loan Purpose 
-    loan_purpose = st.sidebar.selectbox("Loan Purpose", options=[
-        "Both", "Debt Consolidation", "Auto", "Home", "Education", "Other"
-    ])
-    if loan_purpose != "Both":
-        filter_conditions.append(f"LoanPurpose = '{loan_purpose}'")
+    with col1:
+        # Filter by Loan Amount
+        min_loan_amount = st.number_input("Minimum Loan Amount", min_value=0, value=0)
+        max_loan_amount = st.number_input("Maximum Loan Amount", min_value=0, value=1000000)
+        filter_conditions.append(f"LoanAmount BETWEEN {min_loan_amount} AND {max_loan_amount}")
+
+    with col2:
+        # Filter by Employment Status
+        employment_status = st.selectbox("Employment Status", options=["Both", "Employed", "Self-Employed", "Unemployed"])
+        if employment_status != "Both":
+            filter_conditions.append(f"EmploymentStatus = '{employment_status}'")
+        
+        # Filter by Loan Purpose
+        loan_purpose = st.selectbox("Loan Purpose", options=["Both", "Debt Consolidation", "Auto", "Home", "Education", "Other"])
+        if loan_purpose != "Both":
+            filter_conditions.append(f"LoanPurpose = '{loan_purpose}'")
 
     # Create the final query with filters
     base_query = "SELECT * FROM loan_data"
@@ -201,9 +204,8 @@ elif tabs == "SQlite Database":
     except Exception as e:
         st.error(f"An error occurred while querying the database: {e}")
 
-    if st.button('Clear All Rows from Table'):
+    if st.sidebar.button('Clear All Rows from Table'):
         try:
-            # Perform delete operation
             with sqlite3.connect("loan_data.db") as conn:
                 cursor = conn.cursor()
                 cursor.execute("DELETE FROM loan_data;")
