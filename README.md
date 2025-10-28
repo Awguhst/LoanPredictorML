@@ -8,6 +8,11 @@ This app is built using **XGBoost** and **Optuna** for hyperparameter optimizati
 
 ---
 
+## 🎥 Demo
+![Streamlit app GIF](media/demo.gif)
+
+---
+
 ## Features
 
 - **Loan Risk Prediction:** The app predicts two key values:
