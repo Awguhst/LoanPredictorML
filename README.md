@@ -6,6 +6,8 @@ The **Loan Management App** is a proof of concept that uses machine learning mod
 
 This app is built using **XGBoost** and **Optuna** for hyperparameter optimization, providing powerful predictive capabilities for loan risk and approval prediction.
 
+---
+
 ## Features
 
 - **Loan Risk Prediction:** The app predicts two key values:
@@ -22,6 +24,8 @@ This app is built using **XGBoost** and **Optuna** for hyperparameter optimizati
 - **Database Management:** 
   - Store filtered loan application data in an **SQLite database**.
   - Use **SQL queries** to filter and sort loan applications based on multiple parameters such as loan amount, approval status, risk score, employment status, and loan purpose.
+ 
+---
 
 ## Machine Learning Models
 
@@ -47,6 +51,8 @@ Both models were trained on synthetic data derived from the [Financial Risk for 
 
 ### Hyperparameter Tuning with Optuna
 Both models underwent hyperparameter optimization using **Optuna**, an automatic hyperparameter optimization framework. Optuna helps to fine-tune model parameters and improve performance through an efficient search process, ensuring that the models achieve optimal results in terms of predictive accuracy and risk assessment.
+
+---
 
 ## Installation
 
