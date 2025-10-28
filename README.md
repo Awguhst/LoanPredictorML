@@ -1,4 +1,4 @@
-# Loan Management App - Proof of Concept
+# Loan Management App
 
 ## Overview
 
