@@ -33,7 +33,6 @@ The **Loan Risk Prediction** model is a **regression model** trained to predict 
 - **Evaluation Metric:**
   - **R² Score:** 0.769
   - **Mean Absolute Error (MAE):** 2.801
-  - **Mean Squared Error (MSE):** 14.315
   - **Root Mean Squared Error (RMSE):** 3.784
 
 ### 2. **Loan Approval Prediction (Classification Model)**
@@ -41,9 +40,6 @@ The **Loan Approval Prediction** model is a **binary classification model** trai
 
 - **Model Type:** XGBoost Classifier
 - **Evaluation Metrics:**
-  - **F1 Score:** 0.81 (macro average)
-  - **Precision (Approved = 1):** 0.85
-  - **Recall (Approved = 1):** 0.77
   - **Accuracy:** 0.91
   - **Macro Average F1 Score:** 0.87
   - **Weighted Average F1 Score:** 0.91
@@ -101,7 +97,7 @@ This will launch the Streamlit app in your browser.
 - Choose the approval status (**approved**, **rejected**, or **both**) for filtering.
 - After filtering, click the **Save Data to Database** button to store the filtered results in the SQLite database.
 
-## Database
+### Database
 
 - **SQLite Database:** The app uses an SQLite database (`loan_data.db`) to store loan application data.
 - Users can filter and query records stored in the database using SQLAlchemy, which simplifies interaction with the database.
