@@ -15,18 +15,17 @@ This app is built using **XGBoost** and **Optuna** for hyperparameter optimizati
 - **CSV Upload & Prediction:**
   - Upload a CSV file containing loan application data.
   - The app predicts the **Risk Score** and **Loan Approval** status for each loan based on the input features.
+  - **Risk Threshold & Approval Filtering:**
+    - Set a **Risk Threshold** to filter which loan applications meet the criteria before being stored in the database.
+    - Choose whether to store **approved**, **rejected**, or **both** loan applications based on the selected filters.
 
 - **Database Management:** 
-  - Store filtered loan application data in an SQLite database.
-  - Filter and sort loan applications based on various parameters such as loan amount, approval status, risk score, and employment status.
-
-- **Risk Threshold & Approval Filtering:**
-  - Set a **Risk Threshold** to filter which data is stored in the database.
-  - Choose whether to store **approved**, **rejected**, or **both** loan applications.
+  - Store filtered loan application data in an **SQLite database**.
+  - Use **SQL queries** to filter and sort loan applications based on multiple parameters such as loan amount, approval status, risk score, employment status, and loan purpose.
 
 ## Machine Learning Models
 
-### 1. **Loan Risk Prediction (Regression Model)**
+### **Loan Risk Prediction (Regression Model)**
 The **Loan Risk Prediction** model is a **regression model** trained to predict the **Risk Score** of loan applicants. The model uses financial and personal details from the applicant (such as age, income, credit score, and more) to estimate their risk of defaulting on the loan.
 
 - **Model Type:** XGBoost Regressor
@@ -35,7 +34,7 @@ The **Loan Risk Prediction** model is a **regression model** trained to predict 
   - **Mean Absolute Error (MAE):** 2.801
   - **Root Mean Squared Error (RMSE):** 3.784
 
-### 2. **Loan Approval Prediction (Classification Model)**
+### **Loan Approval Prediction (Classification Model)**
 The **Loan Approval Prediction** model is a **binary classification model** trained to predict whether a loan will be **approved (1)** or **rejected (0)** based on an applicant's data.
 
 - **Model Type:** XGBoost Classifier
@@ -76,17 +75,3 @@ After installing dependencies and placing the models in the correct directory, s
 streamlit run app.py
 ```
 This will launch the Streamlit app in your browser.
-
-## Usage
-
-### Tabs Overview
-
-#### **Upload CSV**
-- Upload a CSV file containing loan application data.
-- The app will predict the **Risk Score** (regression model) and **Loan Approval** (classification model) for each entry.
-- You can filter the predictions by risk score and approval status, then save the filtered data to the SQLite database.
-
-#### **SQLite Database**
-- Filter and query loan records stored in the SQLite database.
-- Filter by loan amount, approval status, risk score range, employment status, and loan purpose.
-- Clear all records from the database if needed.
