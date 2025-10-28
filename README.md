@@ -63,3 +63,19 @@ Make sure you have Python 3.7+ installed. Then, install the required Python libr
 
 ```bash
 pip install streamlit pandas scikit-learn xgboost sqlalchemy optuna sqlite3
+```
+
+### 2. Download the Pre-trained Models
+
+The app requires two pre-trained models (`risk_predictor.pkl` for regression and `loan_predictor.pkl` for classification). Place these files in the `./models` directory.
+
+- **`risk_predictor.pkl`:** The regression model for predicting loan risk scores.
+- **`loan_predictor.pkl`:** The classification model for predicting loan approval.
+
+### 3. Run the App
+
+After installing dependencies and placing the models in the correct directory, start the app by running the following command:
+
+```bash
+streamlit run app.py
+```
