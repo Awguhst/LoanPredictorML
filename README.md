@@ -2,7 +2,7 @@
 
 ## Overview
 
-The is **Loan Management Streamlit App** that uses machine learning models to assess loan applications. By predicting the **risk score** and **approval status** of loan applicants, this app provides a quick and effective way to manage loan data. It allows users to upload loan data, make predictions, and store the results in an SQLite database for further analysis.
+The is **Loan Management Streamlit App** that uses machine learning models to assess loan applications. By predicting the **risk score** and **approval status** of loans, this app provides a quick and effective way to manage loan data. It allows users to upload loan data, make predictions, and store the results in an SQLite database for further analysis.
 
 ---
 
