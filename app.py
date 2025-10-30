@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 st.markdown("""
     <style>
         .stButton > button {
-            background-color: #a8a8a8;
+            background-color: #2c2d38;
             color: white;
             border-radius: 10px;
             padding: 10px 20px;
